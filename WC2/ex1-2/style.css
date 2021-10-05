@@ -8,6 +8,14 @@ main {
     justify-content: space-evenly;
 }
 
+h1 {
+    text-align: center;
+}
+
+#team {
+    text-align: center;
+}
+
 .pokemon {
     margin: 1%;
     width: 15%;
