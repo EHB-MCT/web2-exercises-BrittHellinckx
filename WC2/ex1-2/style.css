@@ -54,126 +54,126 @@ button {
 }
 
 /* Types */
-#normal {
+.normal {
     background-color: lightgrey;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#dark {
+.dark {
     background-color: lightslategrey;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#electric {
+.electric {
     background-color: lightgoldenrodyellow;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: gray;
 }
 
-#fire {
+.fire {
     background-color: lightsalmon;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#fighting {
+.fighting {
     background-color: burlywood;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#ground {
+.ground {
     background-color: burlywood;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#rock {
+.rock {
     background-color: burlywood;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#grass {
+.grass {
     background-color: lightgreen;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#bug {
+.bug {
     background-color: lightgreen;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#steel {
+.steel {
     background-color: lightgreen;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#dragon {
+.dragon {
     background-color: lightblue;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#water {
+.water {
     background-color: lightsteelblue;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#ice {
+.ice {
     background-color: lightsteelblue;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#flying {
+.flying {
     background-color: lightskyblue;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#fairy {
+.fairy {
     background-color: lightpink;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#psychic {
+.psychic {
     background-color: lightpink;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#poison {
+.poison {
     background-color: #b97fc9;
     padding: 1% 7.5%;
     border-radius: 10%;
     color: white;
 }
 
-#ghost {
+.ghost {
     background-color: #b97fc9;
     padding: 1% 7.5%;
     border-radius: 10%;
