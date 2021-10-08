@@ -60,20 +60,20 @@ function buildlist() {
         event.preventDefault();
         ////team one
         if (team1 == '') {
-            message.innerHTML = 'Team one created';
-
             let myPoke1 = [];
             let teamName1 = document.getElementById('teamName').value;
             let trainerName1 = document.getElementById('trainerName').value;
+
+            message.innerHTML = `${teamName1} was created`;
 
             for (let i = 0; i < add.length; i++) {
                 add[i].addEventListener('click', function () {
                     if (myPoke1.length == 6) {
                         message.innerHTML = 'The roster is full';
-                    } else if (add[i].name == myPoke1) {
-                        message.innerHTML = 'This Pokémon was already added';
+                    } else if (myPoke1.includes(add[i].name)) {
+                        message.innerHTML = `${add[i].name} was already added`;
                     } else {
-                        message.innerHTML = '';
+                        message.innerHTML = `${add[i].name} has been succesfully added`;
                         myPoke1.push(add[i].name);
                         team1 = new Team(teamName1, trainerName1, myPoke1);
                         team1.describe();
@@ -84,21 +84,21 @@ function buildlist() {
         }
         ////team 2
         else if (team2 == '') {
-            message.innerHTML = 'Team two created';
-            team.innerHTML = '';
-
             let myPoke2 = [];
             let teamName2 = document.getElementById('teamName').value;
             let trainerName2 = document.getElementById('trainerName').value;
+
+            message.innerHTML = `${teamName2}was created`;
+            team.innerHTML = '';
 
             for (let i = 0; i < add.length; i++) {
                 add[i].addEventListener('click', function () {
                     if (myPoke2.length == 6) {
                         message.innerHTML = 'The roster is full';
-                    } else if (add[i].name == myPoke2) {
-                        message.innerHTML = 'This Pokémon was already added';
+                    } else if (myPoke2.includes(add[i].name)) {
+                        message.innerHTML = `${add[i].name} was already added`;
                     } else {
-                        message.innerHTML = '';
+                        message.innerHTML = `${add[i].name} has been succesfully added`;
                         myPoke2.push(add[i].name);
                         team2 = new Team(teamName2, trainerName2, myPoke2);
                         team2.describe();
@@ -108,21 +108,21 @@ function buildlist() {
         }
         ////team 3
         else if (team3 == '') {
-            message.innerHTML = 'Team three created';
-            team.innerHTML = '';
-
             let myPoke3 = [];
             let teamName3 = document.getElementById('teamName').value;
             let trainerName3 = document.getElementById('trainerName').value;
+
+            message.innerHTML = `${teamName3}was created`;
+            team.innerHTML = '';
 
             for (let i = 0; i < add.length; i++) {
                 add[i].addEventListener('click', function () {
                     if (myPoke3.length == 6) {
                         message.innerHTML = 'The roster is full';
-                    } else if (add[i].name == myPoke3) {
-                        message.innerHTML = 'This Pokémon was already added';
+                    } else if (myPoke3.includes(add[i].name)) {
+                        message.innerHTML = `${add[i].name} was already added`;
                     } else {
-                        message.innerHTML = '';
+                        message.innerHTML = `${add[i].name} has been succesfully added`;
                         myPoke3.push(add[i].name);
                         team3 = new Team(teamName3, trainerName3, myPoke3);
                         team3.describe();
