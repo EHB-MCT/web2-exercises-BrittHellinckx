@@ -7,12 +7,8 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
+/*Listing pokemon*/
 h1 {
-    text-align: center;
-}
-
-#team {
     text-align: center;
 }
 
@@ -68,6 +64,13 @@ button {
 #newTeam button {
     border-radius: 15px;
     padding: 1%;
+}
+#team {
+    text-align: center;
+}
+
+#message {
+    text-align: center;
 }
 
 /* Types */

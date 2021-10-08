@@ -4,14 +4,14 @@ import Team from './teams.js'
 
 let list = [];
 let pokemons = [];
-let myPoke1 = [];
-let myPoke2 = [];
-let myPoke3 = [];
 let team1 = '';
 let team2 = '';
 let team3 = '';
+let message = document.getElementById('message');
+let team = document.getElementById('team');
 let add = document.getElementsByClassName("addTeam");
 
+//////////////////////////////////////////////////////////////////////////////////Fetch pokemon
 fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
     .then(resp => resp.json())
     .then(data => {
@@ -30,14 +30,15 @@ window.onload = function () {
     setTimeout(buildlist, 3000);
 };
 
+//////////////////////////////////////////////////////////////////////////////////Displaying pokemon
 function buildlist() {
     let main = document.getElementById('main')
     let htmlString = ""
-
+    ////Sorting pokemon bij number
     pokemons.sort(function (a, b) {
         return a.id - b.id;
     })
-
+    ////Adding pokemon to HTML
     pokemons.forEach(poke => {
         htmlString += `<div class="pokemon">
                             <img src="${poke.sprites.front_default}" alt="${poke.name}"
@@ -54,19 +55,25 @@ function buildlist() {
     })
     main.innerHTML = htmlString
 
+    //////////////////////////////////////////////////////////////////////////////Making a new team & adding pokemon
     document.getElementById('newTeam').addEventListener('submit', event => {
         event.preventDefault();
+        ////team one
         if (team1 == '') {
+            message.innerHTML = 'Team one created';
+
+            let myPoke1 = [];
             let teamName1 = document.getElementById('teamName').value;
             let trainerName1 = document.getElementById('trainerName').value;
 
-            console.log('team 1:', teamName1, trainerName1);
-
             for (let i = 0; i < add.length; i++) {
                 add[i].addEventListener('click', function () {
-                    if (myPoke1.length == 5) {
-                        console.log('Teamlimit reached');
+                    if (myPoke1.length == 6) {
+                        message.innerHTML = 'The roster is full';
+                    } else if (add[i].name == myPoke1) {
+                        message.innerHTML = 'This Pokémon was already added';
                     } else {
+                        message.innerHTML = '';
                         myPoke1.push(add[i].name);
                         team1 = new Team(teamName1, trainerName1, myPoke1);
                         team1.describe();
@@ -74,42 +81,58 @@ function buildlist() {
                 });
             }
 
-        } else if (team2 == '') {
+        }
+        ////team 2
+        else if (team2 == '') {
+            message.innerHTML = 'Team two created';
+            team.innerHTML = '';
+
+            let myPoke2 = [];
             let teamName2 = document.getElementById('teamName').value;
             let trainerName2 = document.getElementById('trainerName').value;
 
-            console.log('team 2:', teamName2, trainerName2);
-
             for (let i = 0; i < add.length; i++) {
                 add[i].addEventListener('click', function () {
-                    if (myPoke2.length == 5) {
-                        console.log('Teamlimit reached');
+                    if (myPoke2.length == 6) {
+                        message.innerHTML = 'The roster is full';
+                    } else if (add[i].name == myPoke2) {
+                        message.innerHTML = 'This Pokémon was already added';
                     } else {
+                        message.innerHTML = '';
                         myPoke2.push(add[i].name);
                         team2 = new Team(teamName2, trainerName2, myPoke2);
                         team2.describe();
                     }
                 });
             }
-        } else if (team3 == '') {
+        }
+        ////team 3
+        else if (team3 == '') {
+            message.innerHTML = 'Team three created';
+            team.innerHTML = '';
+
+            let myPoke3 = [];
             let teamName3 = document.getElementById('teamName').value;
             let trainerName3 = document.getElementById('trainerName').value;
 
-            console.log('team 3:', teamName3, trainerName3);
             for (let i = 0; i < add.length; i++) {
                 add[i].addEventListener('click', function () {
-                    if (myPoke3.length == 5) {
-                        console.log('Teamlimit reached');
+                    if (myPoke3.length == 6) {
+                        message.innerHTML = 'The roster is full';
+                    } else if (add[i].name == myPoke3) {
+                        message.innerHTML = 'This Pokémon was already added';
                     } else {
+                        message.innerHTML = '';
                         myPoke3.push(add[i].name);
                         team3 = new Team(teamName3, trainerName3, myPoke3);
                         team3.describe();
                     }
                 });
             }
-        } else {
-            console.log('Too many teams');
+        }
+        ////Too many teams
+        else {
+            message.innerHTML = 'Too many teams';
         }
     })
-
 };
