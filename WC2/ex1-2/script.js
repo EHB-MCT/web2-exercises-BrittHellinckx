@@ -4,7 +4,12 @@ import Team from './teams.js'
 
 let list = [];
 let pokemons = [];
-let myPoke = [];
+let myPoke1 = [];
+let myPoke2 = [];
+let myPoke3 = [];
+let team1 = '';
+let team2 = '';
+let team3 = '';
 let add = document.getElementsByClassName("addTeam");
 
 fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -46,23 +51,65 @@ function buildlist() {
         htmlString += `     </div>
                             <button class="addTeam" name="${poke.name}">Add to team</button>
                         </div>`
-
     })
     main.innerHTML = htmlString
 
-    for (let i = 0; i < add.length; i++) {
-        add[i].addEventListener('click', function () {
-            if (myPoke.length == 5) {
-                console.log('Teamlimit reached');
-            } else {
-                myPoke.push(add[i].name);
-                console.log(myPoke);
+    document.getElementById('newTeam').addEventListener('submit', event => {
+        event.preventDefault();
+        if (team1 == '') {
+            let teamName1 = document.getElementById('teamName').value;
+            let trainerName1 = document.getElementById('trainerName').value;
 
-                let team1 = new Team("Poki", "Britt", myPoke);
-                team1.describe();
+            console.log('team 1:', teamName1, trainerName1);
+
+            for (let i = 0; i < add.length; i++) {
+                add[i].addEventListener('click', function () {
+                    if (myPoke1.length == 5) {
+                        console.log('Teamlimit reached');
+                    } else {
+                        myPoke1.push(add[i].name);
+                        team1 = new Team(teamName1, trainerName1, myPoke1);
+                        team1.describe();
+                    }
+                });
             }
 
-        });
-    }
+        } else if (team2 == '') {
+            let teamName2 = document.getElementById('teamName').value;
+            let trainerName2 = document.getElementById('trainerName').value;
+
+            console.log('team 2:', teamName2, trainerName2);
+
+            for (let i = 0; i < add.length; i++) {
+                add[i].addEventListener('click', function () {
+                    if (myPoke2.length == 5) {
+                        console.log('Teamlimit reached');
+                    } else {
+                        myPoke2.push(add[i].name);
+                        team2 = new Team(teamName2, trainerName2, myPoke2);
+                        team2.describe();
+                    }
+                });
+            }
+        } else if (team3 == '') {
+            let teamName3 = document.getElementById('teamName').value;
+            let trainerName3 = document.getElementById('trainerName').value;
+
+            console.log('team 3:', teamName3, trainerName3);
+            for (let i = 0; i < add.length; i++) {
+                add[i].addEventListener('click', function () {
+                    if (myPoke3.length == 5) {
+                        console.log('Teamlimit reached');
+                    } else {
+                        myPoke3.push(add[i].name);
+                        team3 = new Team(teamName3, trainerName3, myPoke3);
+                        team3.describe();
+                    }
+                });
+            }
+        } else {
+            console.log('Too many teams');
+        }
+    })
 
 };

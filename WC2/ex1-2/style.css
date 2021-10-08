@@ -48,134 +48,151 @@ h2 {
 }
 
 button {
-    padding: 2% 5%;
+    padding: 6% 9%;
     border: none;
-    border-radius: 10%;
+    border-radius: 7.5px;
+}
+
+/*Making a team*/
+#newTeam {
+    text-align: center;
+}
+
+#newTeam input {
+    padding: 1%;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(235, 235, 235);
+}
+
+#newTeam button {
+    border-radius: 15px;
+    padding: 1%;
 }
 
 /* Types */
 .normal {
     background-color: lightgrey;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .dark {
     background-color: lightslategrey;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .electric {
     background-color: lightgoldenrodyellow;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: gray;
 }
 
 .fire {
     background-color: lightsalmon;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .fighting {
     background-color: burlywood;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .ground {
     background-color: burlywood;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .rock {
     background-color: burlywood;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .grass {
     background-color: lightgreen;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .bug {
     background-color: lightgreen;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .steel {
     background-color: lightgreen;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .dragon {
     background-color: lightblue;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .water {
     background-color: lightsteelblue;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .ice {
     background-color: lightsteelblue;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .flying {
     background-color: lightskyblue;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .fairy {
     background-color: lightpink;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .psychic {
     background-color: lightpink;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .poison {
     background-color: #b97fc9;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
 
 .ghost {
     background-color: #b97fc9;
     padding: 1% 7.5%;
-    border-radius: 10%;
+    border-radius: 7.5px;
     color: white;
 }
