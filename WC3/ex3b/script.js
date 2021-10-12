@@ -1,6 +1,7 @@
 "use strict"
 
 let runtime = 0;
+let movies = [];
 
 window.onload = function () {
     document.getElementById('searchform').addEventListener('submit', e => {
@@ -9,7 +10,10 @@ window.onload = function () {
         searchMovie(input);
     })
 }
-
+//First fetch:http://www.omdbapi.com/?s=${movie}&apikey=ad3250db
+////Getting all movies relating to that title
+//////Second fetch http://www.omdbapi.com/?t=${movie}&apikey=ad3250db`
+////////Getting specific movie
 async function searchMovie(movie) {
     fetch(`http://www.omdbapi.com/?t=${movie}&apikey=ad3250db`)
         .then(response => response.json())
@@ -51,8 +55,6 @@ function movieCount() {
         e.preventDefault();
         let num = parseInt(document.getElementById('add').value);
         runtime += num;
-        console.log(runtime);
-        return runtime;
-
+        document.getElementById('timerCard').innerHTML = `Your total watchtime is ${runtime} minutes`;
     })
 }
