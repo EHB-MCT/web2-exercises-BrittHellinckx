@@ -10,10 +10,12 @@ window.onload = function () {
         searchMovie(input);
     })
 }
-//First fetch:http://www.omdbapi.com/?s=${movie}&apikey=ad3250db
+//On key down: when you start typing it will start generating movies
+///First fetch:http://www.omdbapi.com/?s=${movie}&apikey=ad3250db
 ////Getting all movies relating to that title
 //////Second fetch http://www.omdbapi.com/?t=${movie}&apikey=ad3250db`
 ////////Getting specific movie
+
 async function searchMovie(movie) {
     fetch(`http://www.omdbapi.com/?t=${movie}&apikey=ad3250db`)
         .then(response => response.json())
