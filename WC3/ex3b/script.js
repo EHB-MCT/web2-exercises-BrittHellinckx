@@ -1,5 +1,7 @@
 "use strict"
 
+let runtime = 0;
+
 window.onload = function () {
     document.getElementById('searchform').addEventListener('submit', e => {
         e.preventDefault();
@@ -12,6 +14,7 @@ async function searchMovie(movie) {
     fetch(`http://www.omdbapi.com/?t=${movie}&apikey=ad3250db`)
         .then(response => response.json())
         .then(function (data) {
+            console.log(data);
             let movieCard = document.getElementById('movieCard');
             movieCard.innerHTML = "";
 
@@ -22,7 +25,7 @@ async function searchMovie(movie) {
                         <img src="${data.Poster}" class="card-img" alt="${data.Title}">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body" id="card">
+                        <div class="card-body">
                             <h5 class="card-title">${data.Title}</h5>
                             <p class="card-text">${data.Released}.</p>
                             <p class="card-text">${data.Runtime}.</p>
@@ -46,6 +49,10 @@ async function searchMovie(movie) {
 function movieCount() {
     document.getElementById('add').addEventListener('click', e => {
         e.preventDefault();
-        console.log(document.getElementById('add').value)
+        let num = parseInt(document.getElementById('add').value);
+        runtime += num;
+        console.log(runtime);
+        return runtime;
+
     })
 }
