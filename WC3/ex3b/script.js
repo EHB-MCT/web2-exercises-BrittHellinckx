@@ -5,6 +5,7 @@ let movies = [];
 let more = document.getElementsByClassName("more");
 
 window.onload = function () {
+    //still need to add: on key down instead of submit
     document.getElementById('searchform').addEventListener('submit', e => {
         e.preventDefault();
         let input = document.getElementById('inputTitle').value;
@@ -19,10 +20,11 @@ async function searchMovie(movie) {
             //Adding all movies to screen
             let movieCard = document.getElementById('movieCard');
             let movieMessage = "";
-            
+
             if (data.Search == undefined) {
                 movieCard.innerHTML = `No movies found`;
             } else {
+                //still need to add: show max 10 movies instead of all
                 data.Search.forEach(movies => {
                     movieMessage += `<div class="card mb-3" style="max-width: 540px;">
                                         <div class="row no-gutters">
