@@ -19,25 +19,33 @@ async function searchMovie(movie) {
             //Adding all movies to screen
             let movieCard = document.getElementById('movieCard');
             let movieMessage = "";
-
-            data.Search.forEach(movies => {
-                movieMessage += `<div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="${movies.Poster}" class="card-img" alt="${movies.Title}">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">${movies.Title}</h5>
-                            <p class="card-text">${movies.Year}</p>
-                            <p class="card-text">${movies.Type}</p>
-                            <button class="more"class="btn btn-primary mb-2" name="${movie}" value="${movies.Title}">Read more</button>
-                        </div>
-                    </div>
-                </div>
-            </div>`
-            });
-            movieCard.innerHTML = movieMessage;
+            
+            if (data.Search == undefined) {
+                movieCard.innerHTML = `No movies found`;
+            } else {
+                data.Search.forEach(movies => {
+                    movieMessage += `<div class="card mb-3" style="max-width: 540px;">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">`
+                    if (movies.Poster == "N/A") {
+                        movieMessage += `        <p>Poster not found</p>`
+                    } else {
+                        movieMessage += `        <img src="${movies.Poster}" class="card-img" alt="${movies.Title}">`
+                    }
+                    movieMessage += `       </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${movies.Title}</h5>
+                                                    <p class="card-text">${movies.Year}</p>
+                                                    <p class="card-text">${movies.Type}</p>
+                                                    <button class="more"class="btn btn-primary mb-2" name="${movie}" value="${movies.Title}">Read more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`
+                });
+                movieCard.innerHTML = movieMessage;
+            }
         })
 
     //Waiting until button is loaded
@@ -72,7 +80,7 @@ async function searchMovie2(sTitle, aTitle) {
              <div class="card mb-3" style="max-width: 540px;">
                  <div class="row no-gutters">
                      <div class="col-md-4">
-                         <img src="${data.Poster}" class="card-img" alt="${data.Title}">
+                        <img src="${data.Poster}" class="card-img" alt="${data.Title}">
                      </div>
                      <div class="col-md-8">
                          <div class="card-body">
@@ -100,7 +108,7 @@ async function searchMovie2(sTitle, aTitle) {
     movieCount();
     back()
 }
-
+//adding minutes of movie/series to moviecount
 function movieCount() {
     document.getElementById('add').addEventListener('click', e => {
         e.preventDefault();
@@ -109,7 +117,7 @@ function movieCount() {
         document.getElementById('timerCard').innerHTML = `Your total watchtime is ${runtime} minutes`;
     })
 }
-
+//backbutton on specific movie/series
 function back() {
     document.getElementById('back').addEventListener('click', e => {
         e.preventDefault();
