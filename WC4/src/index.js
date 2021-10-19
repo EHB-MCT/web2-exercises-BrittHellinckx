@@ -1,26 +1,26 @@
 import Cleave from 'cleave.js';
 require('cleave.js/dist/addons/cleave-phone.be');
 
-new Cleave('.my-name', {
+var n = new Cleave('.my-name', {
     prefix: 'STUDENT-'
 });
 
-new Cleave('.my-date', {
+var d = new Cleave('.my-date', {
     date: true,
     datePattern: ['d', 'm', 'Y']
 });
 
-new Cleave('.my-RRN', {
+var r = new Cleave('.my-RRN', {
     blocks: [2, 2, 2, 3, 2],
     delimiters: ['.', '.', '-', '.']
 });
 
-new Cleave('.my-age', {
+var a = new Cleave('.my-age', {
     numeral: true,
     numeralPositiveOnly: true
 });
 
-new Cleave('.my-phone', {
+var p = new Cleave('.my-phone', {
     phone: true,
     phoneRegionCode: 'Be'
 });
