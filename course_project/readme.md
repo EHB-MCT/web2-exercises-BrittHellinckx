@@ -1,3 +1,0 @@
-Log-in credentials:
-
-Sources:
